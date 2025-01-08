@@ -1,57 +1,51 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import CustomButton from '@/components/CustomButton';
+import CustomHeader from '@/components/Header';
+import { HomeCat } from '@/components/ui/HomeCat';
+import OfferSlide from '@/components/ui/offerSlide';
+import { Feather, FontAwesome, Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
+import { Image, StyleSheet, Platform, View, Text, ScrollView, StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
-  );
+  return (<>
+    {/* <StatusBar barStyle="light-content" backgroundColor={'#5E3023'}/> */}
+    <SafeAreaView>
+      <CustomHeader title="Home" onNotification={() => router.push("/(public)/notification")} />
+      <ScrollView className='bg-white h-screen'>
+        <View className='p-5 w-full flex'>
+          <View className='flex w-full mb-5'>
+            <Text className='text-2xl font-bold mb-3'>Complete your profile</Text>
+            <Text className='text-[18px] font-normal'>A complete profile makes you seem more reliable and helps generate business.</Text>
+          </View>
+          <View className='flex w-full bg-gray-300 rounded-lg ring-1 ring-gray-300 mb-2'>
+            <View className='flex w-[82%] h-[20px] bg-red-400 rounded-lg'></View>
+          </View>
+          <View className='flex flex-row w-full mb-5'>
+            <View className='grow'><Text className='text-base text-gray-500'>PROFILE COMPLETEION</Text></View>
+            <View><Text className='text-base text-gray-500 '>86%</Text></View>
+          </View>
+          <View className='flex flex-row rounded-lg ring-1 ring-gray-300 bg-pink-200 p-5 mb-5'>
+            <View className='grow flex flex-row items-center'>
+              <Ionicons name="sparkles" size={24} color="#f9a8d4" />
+              <Text className='ml-6 text-base'>You have 7 new leads</Text>
+            </View>
+            <View><Text className='text-base underline'>View</Text></View>
+          </View>
+          {/* <View className='flex rounded-lg ring-1 ring-gray-300 bg-sky-200 p-5 justify-center items-center mb-5'>
+            <FontAwesome name="image" size={34} color="#0ea5e9" />
+            <Text className='text-xl font-bold mt-3'>Upload Photos</Text>
+            <CustomButton title='Add Photos' bgVariant='secondary' textVariant='secondary' classname='my-5' onPress={() => router.push("/(auth)/register")} />
+          </View> */}
+          <View className='flex rounded-lg border-4 border-gray-300 bg-white p-5 mb-20'>
+            <Text className='text-2xl font-semibold mb-5'>Have any queries? Speak to our team</Text>
+            <CustomButton title='Request Call Back' IconLeft={() => (<View className='mr-5'><Feather name="phone-call" size={24} color="white" /></View>)} bgVariant='info' classname='' onPress={() => router.push("/(auth)/register")} />
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+    </>);
 }
 
 const styles = StyleSheet.create({
