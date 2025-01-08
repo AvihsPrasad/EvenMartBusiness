@@ -35,25 +35,25 @@ function Category() {
         <CustomHeader title="Requests" home={false} backArrow={true} onBack={() => router.back()}/>
         <ScrollView className='bg-[#efefef] h-screen'>
           <View className='flex mb-28 w-full'>
-              <View className='px-5 py-3 flex flex-row overflow-x-scroll w-full'>
-                <TouchableOpacity className='mr-2'>
+              <View className='px-5 py-3 flex flex-row w-full flex-wrap'>
+                <TouchableOpacity className='mr-2 mb-2'>
                   <View className='px-4 py-1 rounded-full border-[0.5px] border-gray-400 bg-white'>
-                    <Text className='text-base'>All (324)</Text>
+                    <Text className='text-sm'>All (324)</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity className='mr-2'>
                   <View className='px-4 py-1 rounded-full border-[0.5px] border-gray-400 bg-white'>
-                    <Text className='text-base'>Pendings (324)</Text>
+                    <Text className='text-sm'>Pendings (324)</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity className='mr-2'>
                   <View className='px-4 py-1 rounded-full border-[0.5px] border-gray-400 bg-white'>
-                    <Text className='text-base'>Rejected (324)</Text>
+                    <Text className='text-sm'>Rejected (324)</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity>
                   <View className='px-4 py-1 rounded-full border-[0.5px] border-gray-400 bg-white'>
-                    <Text className='text-base'>Accepted (324)</Text>
+                    <Text className='text-sm'>Accepted (324)</Text>
                   </View>
                 </TouchableOpacity>
               </View>

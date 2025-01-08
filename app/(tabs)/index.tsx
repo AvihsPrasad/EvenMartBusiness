@@ -4,6 +4,7 @@ import { HomeCat } from '@/components/ui/HomeCat';
 import OfferSlide from '@/components/ui/offerSlide';
 import { Feather, FontAwesome, Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
+import React from 'react';
 import { Image, StyleSheet, Platform, View, Text, ScrollView, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -12,7 +13,7 @@ export default function HomeScreen() {
   return (<>
     {/* <StatusBar barStyle="light-content" backgroundColor={'#5E3023'}/> */}
     <SafeAreaView>
-      <CustomHeader title="Home" onNotification={() => router.push("/(public)/notification")} />
+      <CustomHeader title="Home" notification={true} onNotification={() => router.push("/(public)/notification")} />
       <ScrollView className='bg-white h-screen'>
         <View className='p-5 w-full flex'>
           <View className='flex w-full mb-5'>

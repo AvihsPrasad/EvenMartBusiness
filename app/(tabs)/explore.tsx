@@ -9,7 +9,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export default function TabTwoScreen() {
   const [tab,setTab] = useState(true)
   return (    
-    <SafeAreaView className='mb-[160px]'>
+    <SafeAreaView className='mb-28'>
         <CustomHeader title={"Business"} home={false} backArrow={true} add={true} onBack={() => router.back()} onAddBusiness={() => router.push("/(tabs)/addBusiness")}/>
             {/* <Text>{JSON.stringify({listOfData}.listOfData)}</Text> */}
         <View className='p-4 h-full'>
@@ -18,12 +18,12 @@ export default function TabTwoScreen() {
                 <CustomButton title={"Event Organiser"} bgVariant={tab ?'secondary':'primary'} textVariant={tab?'secondary':'primary'} onPress={() => setTab(false)} classname="w-[48%]"/>
                 <CustomButton title={"Destination"} bgVariant={!tab ?'secondary':'primary'} textVariant={!tab?'secondary':'primary'} onPress={() => setTab(true)} classname="w-[48%]"/>
               </View> */}
-              {tab && <View className='flex'>
+              <View className='flex'>
                 <TouchableOpacity className='mb-2'><ListCard DataList={{Id: 'HALL0002',Name: "Elixer Resort",Rating:'3.5',Address: 'GOA'}} /></TouchableOpacity>
                 <TouchableOpacity className='mb-2'><ListCard DataList={{Id: 'HALL0002',Name: "Jaipur Mahal",Rating:'3.5',Address: 'Jaipur'}} /></TouchableOpacity>
-              </View>}
-              {!tab && <Text>
-                <TouchableOpacity className='mb-2'><ListCard DataList={{Id: 'HALL0002',Name: "GRR Events",Rating:'3.5',Address: 'GOA'}} /></TouchableOpacity></Text>}
+                <TouchableOpacity className='mb-2'><ListCard DataList={{Id: 'HALL0002',Name: "Jaipur Mahal",Rating:'3.5',Address: 'Jaipur'}} /></TouchableOpacity>
+                <TouchableOpacity className='mb-2'><ListCard DataList={{Id: 'HALL0002',Name: "Jaipur Mahal",Rating:'3.5',Address: 'Jaipur'}} /></TouchableOpacity>
+              </View>
             </ScrollView>
         </View>
     </SafeAreaView>

@@ -55,14 +55,14 @@ export default function ProfileEdit() {
           onBack={() => router.back()}
         />
         <ScrollView>
-          <View className="flex p-5 mb-20">
-            <View className="flex bg-white rounded-xl p-3 pb-10">
-                <View className="flex justify-center items-center mt-3">
+          <View className="flex mb-20">
+            <View className="flex bg-white rounded-xl p-5 pb-10">
+                {/* <View className="flex justify-center items-center mt-3"> */}
                     {/* { user?.imageUrl && <Image source={{uri: user?.externalAccounts[0]?.imageUrl ?? user?.imageUrl,}}
                         style={{ width: 120, height: 120, borderRadius: 110 / 2 }} 
                         className=" rounded-full h-[110px] w-[110px] border-[3px] border-white shadow-sm shadow-neutral-300"
                         />}                 */}
-                </View>
+                {/* </View> */}
                 <View className="flex">
                     <InputField label='Username' placeholder='Firstname' icon={<Entypo name={'user' } color={'#979dac'} style={{fontSize:20,marginLeft: 15}}/>} />
                     <InputField label='First Name' placeholder='Firstname' icon={<Entypo name={'user' } color={'#979dac'} style={{fontSize:20,marginLeft: 15}}/>} />

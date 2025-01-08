@@ -68,6 +68,7 @@ declare interface HeaderProps extends TouchableOpacityProps {
     userImage?: any;
     backArrow?: boolean;
     home?: boolean;
+    notification?: boolean;
     add?: boolean;
     onSearch?: any,
     onWishList?: any,

@@ -17,6 +17,7 @@ const CustomHeader = ({
     userImage,
     backArrow = false,
     home = false,
+    notification = false,
     add = false,
     ...props
   }: HeaderProps) => {
@@ -35,16 +36,16 @@ const CustomHeader = ({
             </View>}
             {!home && title && 
             <>
-            {backArrow && <View className="flex flex-row pl-2 w-[40px] h-[40px] justify-center items-center rounded-full bg-[#FFE8D6]">
+            {backArrow && <View className="flex flex-row absolute top-2 left-4 pl-2 w-[40px] h-[40px] justify-center items-center rounded-full bg-[#FFE8D6]">
                 <TouchableOpacity  onPress={() => router.back()} className="mr-2"><AntDesign name="arrowleft" size={20} color="#000" /></TouchableOpacity>
             </View>}
             <View className="grow flex flex-row justify-center items-center">
                 <Text className="text-xl font-RobotoMedium text-white tracking-widest">{title}</Text>
             </View>
             </>}
-        {home && <View className="justify-center">
+        {(home || notification) && <View className={`justify-center ${notification ? 'absolute top-2 right-5': ''}`}>
             <View className="flex flex-row items-end justify-end ">
-                <TouchableOpacity  onPress={onNotification} className="p-3 bg-[#FFE8D6] rounded-lg"><FontAwesome name="bell" size={20} color="#000" /></TouchableOpacity>
+                <TouchableOpacity  onPress={onNotification} className="px-3 py-3 bg-[#FFE8D6] rounded-lg"><FontAwesome name="bell" size={18} color="#000" /></TouchableOpacity>
             </View>
         </View>}
         {add && <View className="justify-center">

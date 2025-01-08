@@ -1,6 +1,6 @@
 import CustomHeader from '@/components/Header'
 import { router } from 'expo-router'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { categoryList } from '@/constants/index'
@@ -27,6 +27,10 @@ const chatUsers = [
 ]
 
 function Chat() {
+  const [searchText, setSearchText] = useState('')
+  // const textSearch = () => {
+  //   set
+  // }
   return (
     <>
       <SafeAreaView>
@@ -34,7 +38,8 @@ function Chat() {
         <ScrollView className=' bg-[#efefef] h-screen'>
           <View className='flex w-full pb-28'>
             <View className='flex px-5 pt-5 bg-white w-full border-b-[0.5px] border-gray-300'>
-                <InputField placeholder='Search user' inputStyle=" h-[35px] text-[14px] rounded-sm" containerStyle='border-[0.5px] border-gray-300'/>
+                <InputField placeholder='Search user' inputStyle=" h-[35px] text-[14px] rounded-sm" containerStyle='border-[0.5px] border-gray-300' onChangeText={(value) => setSearchText(value)}/>
+                <Text>{searchText}</Text>
             </View>
               {/* <View className='flex flex-row overflow-x-auto w-full'> */}
                 {chatUsers && chatUsers.map((data,index) =>
