@@ -31,7 +31,7 @@ function Profile() {
                 <Text className="text-sm font-Roboto pl-2 m-0 text-gray-500">shivaprasad266@gmail.com</Text>
               </View>
               <View className="p-3 ml-5">
-                <TouchableOpacity onPress={() => router.push('/(public)/profileEdit')}>
+                <TouchableOpacity onPress={() => router.push('/(public)/profile/profileEdit')}>
                   <Feather name="edit" size={22} color="#3b82f6" />
                   <Text className="mt-2 text-blue-500 font-RobotoMedium">Edit</Text>
                 </TouchableOpacity>

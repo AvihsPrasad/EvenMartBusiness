@@ -8,7 +8,7 @@ import { categoryList } from '@/constants/index'
 // import { getCategories, getDBVersion } from '../(api)/cat+api'
 import { fetchAPI } from '@/lib/fetch'
 import CustomButton from '@/components/CustomButton'
-import { Feather, FontAwesome } from '@expo/vector-icons'
+import { Entypo, Feather, FontAwesome } from '@expo/vector-icons'
 import InputField from '@/components/InputField'
 
 const chatUsers = [
@@ -27,10 +27,26 @@ const chatUsers = [
 ]
 
 function Chat() {
+  const [usersData, setUsersData] = useState(chatUsers)
   const [searchText, setSearchText] = useState('')
-  // const textSearch = () => {
-  //   set
-  // }
+  const [searchClear, setSearchClear] = useState(false)
+  const clearText = () => {
+    setUsersData(chatUsers);
+    setSearchText('');
+    setSearchClear(false);
+  }
+  const textSearch = (val: any) => {
+    setSearchText(val)
+    if (val === ''){
+      setSearchClear(false)
+      setUsersData(chatUsers)
+    } else {
+      setSearchClear(true)
+      let sotedData = chatUsers.filter((data)=> data.userName.includes(val))
+      setUsersData(sotedData)
+    }
+    
+  }
   return (
     <>
       <SafeAreaView>
@@ -38,11 +54,15 @@ function Chat() {
         <ScrollView className=' bg-[#efefef] h-screen'>
           <View className='flex w-full pb-28'>
             <View className='flex px-5 pt-5 bg-white w-full border-b-[0.5px] border-gray-300'>
-                <InputField placeholder='Search user' onChangeText={(value) => setSearchText(value)}/>
-                {/* <Text>{searchText}</Text> */}
+                <InputField 
+                    placeholder='Search user' 
+                    value={searchText} 
+                    onChangeText={(value) => textSearch(value)} 
+                    icon={searchClear&&<TouchableOpacity className='absolute right-5 z-10' onPress={()=>clearText()}><Entypo name="circle-with-cross" size={24} color="#9ca3af" /></TouchableOpacity>}
+                />
             </View>
               {/* <View className='flex flex-row overflow-x-auto w-full'> */}
-                {chatUsers && chatUsers.map((data,index) =>
+                {usersData && usersData.map((data,index) =>
                     (<TouchableOpacity key={index} className="w-full" onPress={() => router.push({pathname:'/(public)/chat/[chatId]',params:{chatId: '' + data.userName}})}>
                         <View className="flex flex-row bg-white px-5 py-3">
                             <View className="w-[45px] h-[45px] justify-center items-center rounded-full bg-[#ededed]">

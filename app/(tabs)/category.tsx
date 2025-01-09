@@ -1,27 +1,21 @@
 import CustomHeader from '@/components/Header'
 import { router } from 'expo-router'
-import React, { useEffect } from 'react'
-import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-// import { categoryList } from '@/constants/index'
-// import Icon from '@/components/icon'
-// import { getCategories, getDBVersion } from '../(api)/cat+api'
-// import { fetchAPI } from '@/lib/fetch'
-import CustomButton from '@/components/CustomButton'
-import { Feather } from '@expo/vector-icons'
+import React, { useState } from 'react'
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FontAwesome, FontAwesome5, FontAwesome6, MaterialCommunityIcons } from '@expo/vector-icons'
 
 const requests =[
-  {id:'1',title:'Hall',from:'Ganesh ks',createdOn:'17-Sep-2023',status:'pending',Brand:'Agustya Function hall',fromDate: '17-Sep-2023 08:00 AM',toDate:'17-Sep-2023 08:00 AM',},
-  {id:'2',title:'Photographer',from:'Harshitha DS',createdOn:'17-Sep-2023',status:'rejected',Brand:'Machani clicks',fromDate: '17-Sep-2023 08:00 AM',toDate:'17-Sep-2023 08:00 AM',},
-  {id:'3',title:'Catering',from:'Vaibhav DS',createdOn:'17-Sep-2023',status:'Accepted',Brand:'Anapoorna Catering',fromDate: '17-Sep-2023 08:00 AM',toDate:'17-Sep-2023 08:00 AM',},
-  {id:'2',title:'Photographer',from:'Harshitha DS',createdOn:'17-Sep-2023',status:'rejected',Brand:'Machani clicks',fromDate: '17-Sep-2023 08:00 AM',toDate:'17-Sep-2023 08:00 AM',},
-  {id:'3',title:'Catering',from:'Vaibhav DS',createdOn:'17-Sep-2023',status:'Accepted',Brand:'Anapoorna Catering',fromDate: '17-Sep-2023 08:00 AM',toDate:'17-Sep-2023 08:00 AM',},
-  {id:'2',title:'Photographer',from:'Harshitha DS',createdOn:'17-Sep-2023',status:'rejected',Brand:'Machani clicks',fromDate: '17-Sep-2023 08:00 AM',toDate:'17-Sep-2023 08:00 AM',},
-  {id:'3',title:'Catering',from:'Vaibhav DS',createdOn:'17-Sep-2023',status:'Accepted',Brand:'Anapoorna Catering',fromDate: '17-Sep-2023 08:00 AM',toDate:'17-Sep-2023 08:00 AM',},
-  {id:'2',title:'Photographer',from:'Harshitha DS',createdOn:'17-Sep-2023',status:'rejected',Brand:'Machani clicks',fromDate: '17-Sep-2023 08:00 AM',toDate:'17-Sep-2023 08:00 AM',},
-  {id:'3',title:'Catering',from:'Vaibhav DS',createdOn:'17-Sep-2023',status:'Accepted',Brand:'Anapoorna Catering',fromDate: '17-Sep-2023 08:00 AM',toDate:'17-Sep-2023 08:00 AM',},
-  {id:'3',title:'Catering',from:'Vaibhav DS',createdOn:'17-Sep-2023',status:'Accepted',Brand:'Anapoorna Catering',fromDate: '17-Sep-2023 08:00 AM',toDate:'17-Sep-2023 08:00 AM',},
-  {id:'3',title:'Catering',from:'Vaibhav DS',createdOn:'17-Sep-2023',status:'Accepted',Brand:'Anapoorna Catering',fromDate: '17-Sep-2023 08:00 AM',toDate:'17-Sep-2023 08:00 AM',},
+  {id:'1',title:'Hall',from:'Ganesh ks',createdOn:'17-Sep-1823',status:'pending',Brand:'Agustya Function hall',fromDate: '17-Sep-1823 08:00 AM',toDate:'17-Sep-1823 08:00 AM',},
+  {id:'2',title:'Photographer',from:'Harshitha DS',createdOn:'17-Sep-1823',status:'rejected',Brand:'Machani clicks',fromDate: '17-Sep-1823 08:00 AM',toDate:'17-Sep-1823 08:00 AM',},
+  {id:'3',title:'Food',from:'Vaibhav DS',createdOn:'17-Sep-1823',status:'Accepted',Brand:'Anapoorna Food',fromDate: '17-Sep-1823 08:00 AM',toDate:'17-Sep-1823 08:00 AM',},
+  {id:'2',title:'Photographer',from:'Harshitha DS',createdOn:'17-Sep-1823',status:'rejected',Brand:'Machani clicks',fromDate: '17-Sep-1823 08:00 AM',toDate:'17-Sep-1823 08:00 AM',},
+  {id:'3',title:'Food',from:'Vaibhav DS',createdOn:'17-Sep-1823',status:'Accepted',Brand:'Anapoorna Food',fromDate: '17-Sep-1823 08:00 AM',toDate:'17-Sep-1823 08:00 AM',},
+  {id:'2',title:'Photographer',from:'Harshitha DS',createdOn:'17-Sep-1823',status:'rejected',Brand:'Machani clicks',fromDate: '17-Sep-1823 08:00 AM',toDate:'17-Sep-1823 08:00 AM',},
+  {id:'3',title:'Food',from:'Vaibhav DS',createdOn:'17-Sep-1823',status:'Accepted',Brand:'Anapoorna Food',fromDate: '17-Sep-1823 08:00 AM',toDate:'17-Sep-1823 08:00 AM',},
+  {id:'2',title:'Photographer',from:'Harshitha DS',createdOn:'17-Sep-1823',status:'rejected',Brand:'Machani clicks',fromDate: '17-Sep-1823 08:00 AM',toDate:'17-Sep-1823 08:00 AM',},
+  {id:'3',title:'Food',from:'Vaibhav DS',createdOn:'17-Sep-1823',status:'Accepted',Brand:'Anapoorna Food',fromDate: '17-Sep-1823 08:00 AM',toDate:'17-Sep-1823 08:00 AM',},
+  {id:'3',title:'Food',from:'Vaibhav DS',createdOn:'17-Sep-1823',status:'Accepted',Brand:'Anapoorna Food',fromDate: '17-Sep-1823 08:00 AM',toDate:'17-Sep-1823 08:00 AM',},
+  {id:'3',title:'Food',from:'Vaibhav DS',createdOn:'17-Sep-1823',status:'Accepted',Brand:'Anapoorna Food',fromDate: '17-Sep-1823 08:00 AM',toDate:'17-Sep-1823 08:00 AM',},
   // {id:'1',title:'',from:'',createdOn:'',status:'',Brand:''},
   // {id:'1',title:'',from:'',createdOn:'',status:'',Brand:''},
   // {id:'1',title:'',from:'',createdOn:'',status:'',Brand:''},
@@ -29,45 +23,67 @@ const requests =[
 ]
 
 function Category() {
+//   const [modalVisible, setModalVisible] = useState(false);
+  const [requestData, setRequestData] = useState(requests);
+  const [filter, setFilter] = useState('All')
+  const filterData = (item: any)=>{
+    setFilter(item)
+    if (item === 'All'){
+      // setFilter(item)
+      setRequestData(requests)
+    } else {
+      let sotedData = requests.filter((data)=> data.status === item)
+      setRequestData(sotedData)
+    }
+  }
   return (
     <>
-      <SafeAreaView>
+      {/* <SafeAreaView> */}
         <CustomHeader title="Requests" home={false} backArrow={true} onBack={() => router.back()}/>
         <ScrollView className='bg-[#efefef] h-screen'>
-          <View className='flex mb-28 w-full'>
-              <View className='px-5 py-3 flex flex-row w-full flex-wrap'>
-                <TouchableOpacity className='mr-2 mb-2'>
-                  <View className='px-4 py-1 rounded-full border-[0.5px] border-gray-400 bg-white'>
-                    <Text className='text-sm'>All (324)</Text>
+          <View className='flex w-full'>
+              <View className='px-4 py-3 flex flex-row w-full flex-wrap'>
+                {/* <Text>{filter}</Text> */}
+                <TouchableOpacity className='mr-2' onPress={()=>filterData('All')}>
+                  <View className={`px-4 py-1 rounded-md border-[0.5px] border-gray-400 ${filter == 'All'? 'bg-yellow-400':'bg-white'}`}>
+                    <Text className='text-sm'>All</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity className='mr-2'>
-                  <View className='px-4 py-1 rounded-full border-[0.5px] border-gray-400 bg-white'>
-                    <Text className='text-sm'>Pendings (324)</Text>
+                <TouchableOpacity className='mr-2' onPress={()=>filterData('pending')}>
+                  <View className={`px-4 py-1 rounded-md border-[0.5px] border-gray-400 ${filter == 'pending'? 'bg-yellow-400':'bg-white'}`}>
+                    <Text className='text-sm'>Pendings</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity className='mr-2'>
-                  <View className='px-4 py-1 rounded-full border-[0.5px] border-gray-400 bg-white'>
-                    <Text className='text-sm'>Rejected (324)</Text>
+                <TouchableOpacity className='mr-2' onPress={()=>filterData('rejected')}>
+                  <View className={`px-4 py-1 rounded-md border-[0.5px] border-gray-400 ${filter == 'rejected'? 'bg-yellow-400':'bg-white'}`}>
+                    <Text className='text-sm'>Rejected</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                  <View className='px-4 py-1 rounded-full border-[0.5px] border-gray-400 bg-white'>
-                    <Text className='text-sm'>Accepted (324)</Text>
+                <TouchableOpacity onPress={()=>filterData('Accepted')}>
+                  <View className={`px-4 py-1 rounded-md border-[0.5px] border-gray-400 ${filter == 'Accepted'? 'bg-yellow-400':'bg-white'}`}>
+                    <Text className='text-sm'>Accepted</Text>
                   </View>
                 </TouchableOpacity>
               </View>
-              {requests && requests.map((data,index)=>(<View className='flex' key={index}>
+              {requestData && requestData.map((data,index)=>(<View className='flex' key={index}>
                 <TouchableOpacity className="mb-0" onPress={() => router.push({pathname:'/(public)/request/[requestId]',params:{requestId: '' + data.from}})}>
-                  <View className="flex flex-row bg-white p-3 border-b-[0.5px] border-gray-300">
-                      <View className={`w-[45px] h-[45px] justify-center items-center rounded-full ${data.status === 'pending'? 'bg-sky-300': data.status === 'Accepted'? 'bg-green-300':'bg-red-300'}`}>
-                          <Feather name="package" size={20} color="black" />
+                  <View className="flex flex-row bg-white p-3 border-b-[1px] border-gray-300">
+                      <View className={`w-[45px] h-[45px] justify-center items-center rounded-full bg-gray-200 border-[1px] border-gray-300`}>
+                          {data.title == 'Hall' &&<FontAwesome name="university" size={18} color="black" />}
+                          {data.title == 'Props' &&<MaterialCommunityIcons name="sunglasses" size={18} color="black" />}
+                          {data.title == 'Photographer' &&<FontAwesome name="camera-retro" size={18} color="black" />}
+                          {data.title == 'Decorations' &&<FontAwesome6 name="award" size={18} color="black" />}
+                          {data.title == 'Music' &&<FontAwesome name="music" size={18} color="black" />}
+                          {data.title == 'MUA' &&<FontAwesome6 name="wand-magic-sparkles" size={18} color="black" />}
+                          {data.title == 'Food' &&<FontAwesome6 name="burger" size={18} color="black" />}
+                          {data.title == 'Invitations' &&<FontAwesome5 name="book-open" size={18} color="black" />}
+                          {data.title == 'Jewels' &&<MaterialCommunityIcons name="gold" size={18} color="black" />}
+                          {data.title == 'Vehical' &&<FontAwesome5 name="car" size={18} color="black" />}
                       </View>
-                      <View className="pl-5 grow">
+                      <View className="pl-5 grow items-center">
                         <View className='flex flex-row items-center'>
                           <View className='flex flex-row grow items-center'>
-                            <Text className="font-semibold text-base">{data.title} - </Text>
-                            <Text className="font-normal text-sm">{data.from}</Text>
+                            <Text className="font-semibold text-base">{data.from}</Text>
                           </View>
                           <Text className={`font-normal text-xs text-gray-500`}>{data.createdOn}</Text>
                         </View>
@@ -83,9 +99,53 @@ function Category() {
               </View>))}
           </View>
         </ScrollView>
-      </SafeAreaView>
+      {/* </SafeAreaView> */}
     </>
   )
 }
 
-export default Category
+export default Category;
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor:'white',
+    // opacity:0.5
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+  },
+  buttonOpen: {
+    backgroundColor: '#F194FF',
+  },
+  buttonClose: {
+    backgroundColor: '#2196F3',
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: 'center',
+  },
+});

@@ -73,6 +73,7 @@ export const onboarding = [
     },
 ];
 export const MenuList = [
+    {title: 'Add Offers & Coupons',descp: '',route: ''},
     {title: 'Bookings',descp: '',route: ''},
     {title: 'Location',descp: '',route: ''},
     {title: 'Documents',descp: '',route: ''},
