@@ -19,6 +19,7 @@ import BannerThree from "@/assets/banner/banner3.png"
 import BannerFour from "@/assets/banner/banner4.png"
 import BannerFive from "@/assets/banner/banner5.png"
 import map from "@/assets/images/map.jpg"
+import check from "@/assets/images/check.png"
 // import Category from "@/app/(tabs)/category";
 
 export const images = {
@@ -41,6 +42,7 @@ export const images = {
     BannerFour,
     BannerFive,
     map,
+    check
 };
 
 export const icons = {
@@ -95,7 +97,7 @@ export const categoryList = [
     {   CategoryId: 'CATLST002',
         CategoryName: 'Props',
         categoryDisp: 'Props for decorations and photoshoot',
-        IconInfo: {type:'MaterialCommunityIcons',name:'sunglassessunglasses',size:24,color:'#5E3023'},
+        IconInfo: {type:'MaterialCommunityIcons',name:'sunglasses',size:24,color:'#5E3023'},
         CategoryUrl: images.props,
         RedirectUrl: '/(auth)/welcome'
     },

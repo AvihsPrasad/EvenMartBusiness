@@ -100,10 +100,12 @@ declare interface InputFieldProps extends TextInputProps {
     secureTextEntry?: boolean;
     labelStyle?: string;
     disable?: boolean;
+    multiline?: boolean;
     containerStyle?: string;
     inputStyle?: string;
     iconStyle?: string;
     className?: string;
+    row?: number;
 }
 
 declare interface PaymentProps {

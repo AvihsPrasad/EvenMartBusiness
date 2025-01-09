@@ -58,7 +58,7 @@ function Category() {
                 </TouchableOpacity>
               </View>
               {requests && requests.map((data,index)=>(<View className='flex' key={index}>
-                <TouchableOpacity className="mb-0">
+                <TouchableOpacity className="mb-0" onPress={() => router.push({pathname:'/(public)/request/[requestId]',params:{requestId: '' + data.from}})}>
                   <View className="flex flex-row bg-white p-3 border-b-[0.5px] border-gray-300">
                       <View className={`w-[45px] h-[45px] justify-center items-center rounded-full ${data.status === 'pending'? 'bg-sky-300': data.status === 'Accepted'? 'bg-green-300':'bg-red-300'}`}>
                           <Feather name="package" size={20} color="black" />

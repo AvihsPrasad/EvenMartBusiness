@@ -1,4 +1,5 @@
 import CustomButton from '@/components/CustomButton';
+import DropdownComponent from '@/components/dropdown';
 import InputField from '@/components/InputField'
 import OAuth from '@/components/OAuth';
 import { router } from 'expo-router';
@@ -6,7 +7,21 @@ import React, { useState } from 'react'
 import { ScrollView, Text, TextInput, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
+const data = [
+    { label: 'Event Hall', value: '1' },
+    { label: 'Props', value: '2' },
+    { label: 'Photos & Videos', value: '3' },
+    { label: 'Decorations', value: '4' },
+    { label: 'Music & DJ', value: '5' },
+    { label: 'MUA', value: '6' },
+    { label: 'Food & Beverages', value: '7' },
+    { label: 'Invitations', value: '8' },
+    { label: 'Arificial Jewels', value: '9' },
+    { label: 'Vehical Convoie', value: '10' },
+  ];
+
 function Register() {
+    const [value, setValue] = useState('');
     const [form, setForm] = useState({
         Email: "shivaprasad266@gmail.com",
         vName: "Shivaprasad KS",
@@ -20,7 +35,7 @@ function Register() {
         Password: "9591499101",
       });
   return (
-    <SafeAreaView className="flex h-full items-center justify-between bg-white w-full">
+    <View className="flex h-full items-center justify-between bg-white w-full">
         <ScrollView className='flex w-full'>
             <View className="flex w-full p-5">
                 <Text className='mt-5 text-4xl font-RobotoMedium'>Register</Text>
@@ -43,6 +58,10 @@ function Register() {
                     value={form.vName}
                     onChangeText={(value) => setForm({ ...form, vName: value })}
                     />
+                </View>
+                <View className='flex mb-2 w-full'>
+                    <Text className='mb-2 text-lg'>Business Type</Text>
+                    <DropdownComponent data={data} value={value} dropStyle='bg-gray-200'  />
                 </View>
                 <View className='flex mb-2 w-full'>
                     <InputField
@@ -106,7 +125,7 @@ function Register() {
         {/* <View className="flex pb-8 bg-white">
           <OAuth />
         </View> */}
-    </SafeAreaView>
+    </View>
   )
 }
 

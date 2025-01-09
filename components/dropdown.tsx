@@ -5,7 +5,12 @@ import React, { useState } from 'react';
 
 
 
-  const DropdownComponent = ({data = [{ label: 'Item 1', value: '1' }], value=''}) => {
+  const DropdownComponent = ({
+        data = [{ label: 'Item 1', value: '1' }],
+        value='',
+        dropStyle='',
+        ...props
+    }) => {
     // const [value, setValue] = useState(null);
     const [isFocus, setIsFocus] = useState(false);
 
@@ -21,7 +26,7 @@ import React, { useState } from 'react';
     // };
 
     return (
-      <View style={styles.container}>
+      <View className={`bg-white ${dropStyle}`}>
         {/* {renderLabel()} */}
         <Dropdown
           style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
@@ -60,11 +65,11 @@ import React, { useState } from 'react';
 
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: 'white',
+    //   backgroundColor: 'white',
     //   padding: 16,
     },
     dropdown: {
-      height: 40,
+      height: 50,
       borderColor: 'gray',
       borderWidth: 0.5,
       borderRadius: 8,

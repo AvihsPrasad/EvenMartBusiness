@@ -1,24 +1,20 @@
 import CustomButton from "@/components/CustomButton";
 import CustomHeader from "@/components/Header";
+import { Entypo } from "@expo/vector-icons";
 import { router, useLocalSearchParams } from "expo-router";
 import React, { useState } from "react";
 import { SafeAreaView, ScrollView, Text, View } from "react-native";
 
-const Price = () => {
-  const { price } = useLocalSearchParams();
+const RequestId = () => {
+  const { requestId } = useLocalSearchParams();
   const [form, setForm] = useState({ searchtext: "" });
   return (
-    <SafeAreaView>
+    <>
+      <CustomHeader title={`${requestId}`} home={false} backArrow={true} onBack={() => router.back()}/>
       <ScrollView className="mb-[75px] h-[90%]">
-      <CustomHeader
-        title="Price"
-        home={false}
-        backArrow={true}
-        onBack={() => router.back()}
-      />
         <View className="p-5">
             <View className="flex bg-white rounded-lg p-4 w-full">
-                <Text className="text-xl font-bold">Order Summary</Text>
+                <Text className="text-xl font-bold">Booking Details</Text>
                 <View className="mb-5">
                     <View className="flex flex-row">
                         <Text className="text-lg font-bold">Hall Name :</Text>
@@ -41,15 +37,13 @@ const Price = () => {
         </View>
       </ScrollView>
       <View className='flex flex-row absolute z-10 mt-2 py-3 bottom-0 left-0 w-full bg-[#FFE8D6]'>
-          {/* <View className='grow px-5'>
-            <Text className='text-xl font-medium'>8,000</Text>
-          </View> */}
-          <View className='flex-row gap-2 px-5 w-full'>
-            <CustomButton title={"Confirm Payment"} classname="w-full"/>
+          <View className='flex-row gap-3 px-5 w-full'>
+            <CustomButton title={"Reject"} classname="w-[48%] bg-red-700" IconLeft={() => (<View className='mr-5'><Entypo name="check" size={24} color="white" /></View>)}/>
+            <CustomButton title={"Accept"} classname="w-[48%] bg-blue-600" IconLeft={() => (<View className='mr-5'><Entypo name="cross" size={24} color="white" /></View>)}/>
           </View>
         </View>
-    </SafeAreaView>
+    </>
   );
 };
 
-export default Price;
+export default RequestId;

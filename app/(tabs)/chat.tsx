@@ -38,13 +38,13 @@ function Chat() {
         <ScrollView className=' bg-[#efefef] h-screen'>
           <View className='flex w-full pb-28'>
             <View className='flex px-5 pt-5 bg-white w-full border-b-[0.5px] border-gray-300'>
-                <InputField placeholder='Search user' inputStyle=" h-[35px] text-[14px] rounded-sm" containerStyle='border-[0.5px] border-gray-300' onChangeText={(value) => setSearchText(value)}/>
-                <Text>{searchText}</Text>
+                <InputField placeholder='Search user' onChangeText={(value) => setSearchText(value)}/>
+                {/* <Text>{searchText}</Text> */}
             </View>
               {/* <View className='flex flex-row overflow-x-auto w-full'> */}
                 {chatUsers && chatUsers.map((data,index) =>
                     (<TouchableOpacity key={index} className="w-full" onPress={() => router.push({pathname:'/(public)/chat/[chatId]',params:{chatId: '' + data.userName}})}>
-                        <View className="flex flex-row bg-white p-3">
+                        <View className="flex flex-row bg-white px-5 py-3">
                             <View className="w-[45px] h-[45px] justify-center items-center rounded-full bg-[#ededed]">
                                 <FontAwesome name="user" size={24} color="black" />
                             </View>

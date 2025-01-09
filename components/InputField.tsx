@@ -20,7 +20,9 @@ import {
     containerStyle,
     inputStyle,
     iconStyle,
+    row = 1,
     disable = true,
+    multiline = false,
     className,
     ...props
   }: InputFieldProps) => {
@@ -46,6 +48,9 @@ import {
                 placeholderTextColor="#979dac"
                 secureTextEntry={secureTextEntry}
                 editable={disable}
+                multiline={multiline}
+                textAlignVertical={multiline? 'top': 'center'}
+                numberOfLines={row}
                 {...props}
               />
             </View>
