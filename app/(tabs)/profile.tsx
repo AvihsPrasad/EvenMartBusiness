@@ -40,7 +40,7 @@ function Profile() {
             {
                 MenuList.map((item,index) => (
                     // <View key={index}>
-                        <TouchableOpacity key={index}>
+                        <TouchableOpacity key={index} onPress={()=> router.push(`${item.route}` as Href<string>)}>
                             <View className="flex flex-row bg-white px-5 mb-0.5 py-4">
                                 <View className="grow">
                                     <Text className="font-Roboto text-lg">{item.title}</Text>

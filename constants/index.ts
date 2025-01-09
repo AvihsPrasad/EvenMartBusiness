@@ -73,13 +73,14 @@ export const onboarding = [
     },
 ];
 export const MenuList = [
-    {title: 'Add Offers & Coupons',descp: '',route: ''},
-    {title: 'Bookings',descp: '',route: ''},
-    {title: 'Location',descp: '',route: ''},
-    {title: 'Documents',descp: '',route: ''},
-    {title: 'Notifications',descp: '',route: ''},
-    {title: 'CustomerCare',descp: '',route: ''},
-    {title: 'Terms & Condition',descp: '',route: ''},
+    {title: 'Add Offers & Coupons',descp: '',route: '/(public)/profile/notification'},
+    {title: 'Bookings',descp: '',route: '/(public)/profile/bookings'},
+    {title: 'Chat',descp: '',route: '/(tabs)/chat'},
+    {title: 'Location',descp: '',route: '/(public)/profile/location'},
+    {title: 'Documents',descp: '',route: '/(public)/profile/documents'},
+    {title: 'Notifications',descp: '',route: '/(public)/profile/notification'},
+    {title: 'Help support',descp: '',route: '/(public)/profile/support'},
+    {title: 'Terms & Condition',descp: '',route: '/(public)/profile/termsAndConditions'},
 ];
 export const HomeSwiperImages = [
     {url: images.BannerThree},

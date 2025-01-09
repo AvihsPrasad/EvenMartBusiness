@@ -7,7 +7,7 @@ function Support() {
   return (
     <>
       <CustomHeader title="Support" backArrow={true} onBack={() => router.back()}/>
-      <ScrollView className="flex bg-[#5E3023] px-3 pt-4"></ScrollView>
+      <ScrollView className="flex px-3 pt-4"></ScrollView>
     </>
   );
 }
