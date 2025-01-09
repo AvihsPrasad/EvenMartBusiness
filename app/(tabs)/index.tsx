@@ -12,7 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export default function HomeScreen() {
   return (<>
     {/* <StatusBar barStyle="light-content" backgroundColor={'#5E3023'}/> */}
-    <SafeAreaView>
+    {/* <SafeAreaView> */}
       <CustomHeader title="Home" notification={true} onNotification={() => router.push("/(public)/profile/notification")} />
       <ScrollView className='bg-white h-screen'>
         <View className='p-5 w-full flex'>
@@ -53,7 +53,7 @@ export default function HomeScreen() {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    {/* </SafeAreaView> */}
     </>);
 }
 

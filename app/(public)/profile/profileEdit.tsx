@@ -47,7 +47,7 @@ export default function ProfileEdit() {
     <>
       {/* {Platform.OS === 'ios'? <View className="bg-red-500 w-full h-9"><Text>asas</Text></View> : ''} */}
       {/* <StatusBar barStyle="light-content" backgroundColor={'#32357a'}/> */}
-      <SafeAreaView>
+      {/* <SafeAreaView> */}
       {/* <Spinner visible={loading} /> */}
         <CustomHeader
           title="Edit Profile"
@@ -95,7 +95,7 @@ export default function ProfileEdit() {
           </View>
         </ReactNativeModal>
         </ScrollView>
-      </SafeAreaView>
+      {/* </SafeAreaView> */}
     </>
   );
 }

@@ -14,7 +14,7 @@ function LogIn() {
   return (
     <SafeAreaView className="flex-1 h-full items-center justify-between bg-white">
         <View className="flex p-5 w-full">
-            <Text className='mt-5 text-4xl font-RobotoMedium'>Login</Text>
+            <Text className='text-4xl font-RobotoMedium'>Login</Text>
             <View className='flex mt-5 w-full'>
                 <InputField
                 label="Email"

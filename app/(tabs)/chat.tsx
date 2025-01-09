@@ -49,7 +49,7 @@ function Chat() {
   }
   return (
     <>
-      <SafeAreaView>
+      {/* <SafeAreaView> */}
         <CustomHeader title="Chat" home={false} backArrow={true} onBack={() => router.back()}/>
         <ScrollView className=' bg-[#efefef] h-screen'>
           <View className='flex w-full pb-28'>
@@ -86,7 +86,7 @@ function Chat() {
               {/* </View> */}
           </View>
         </ScrollView>
-      </SafeAreaView>
+      {/* </SafeAreaView> */}
     </>
   )
 }

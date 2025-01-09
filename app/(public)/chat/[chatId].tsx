@@ -10,7 +10,7 @@ const ChatId = () => {
   const { chatId } = useLocalSearchParams();
   // const [form, setForm] = useState({ searchtext: "" });
   return (
-    <SafeAreaView>
+    <>
       <View className="flex h-full">
         <View className="">
           <CustomHeader title={`${chatId}`} home={false} backArrow={true} onBack={() => router.back()}/>
@@ -67,7 +67,7 @@ const ChatId = () => {
         </View>
       </View>
 
-    </SafeAreaView>
+    </>
   );
 };
 

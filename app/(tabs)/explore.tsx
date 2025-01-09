@@ -9,7 +9,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export default function TabTwoScreen() {
   const [tab,setTab] = useState(true)
   return (    
-    <SafeAreaView className='mb-28'>
+    <View>
         <CustomHeader title={"Business"} home={false} backArrow={true} add={true} onBack={() => router.back()} onAddBusiness={() => router.push("/(tabs)/addBusiness")}/>
             {/* <Text>{JSON.stringify({listOfData}.listOfData)}</Text> */}
         <View className='p-4 h-full'>
@@ -26,7 +26,7 @@ export default function TabTwoScreen() {
               </View>
             </ScrollView>
         </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
