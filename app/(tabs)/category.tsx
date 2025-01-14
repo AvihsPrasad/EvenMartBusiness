@@ -3,6 +3,7 @@ import { router } from 'expo-router'
 import React, { useState } from 'react'
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { FontAwesome, FontAwesome5, FontAwesome6, MaterialCommunityIcons } from '@expo/vector-icons'
+import DropdownComponent from '@/components/dropdown'
 
 const requests =[
   {id:'1',title:'Hall',from:'Ganesh ks',createdOn:'17-Sep-1823',status:'pending',Brand:'Agustya Function hall',fromDate: '17-Sep-1823 08:00 AM',toDate:'17-Sep-1823 08:00 AM',},
@@ -20,7 +21,11 @@ const requests =[
   // {id:'1',title:'',from:'',createdOn:'',status:'',Brand:''},
   // {id:'1',title:'',from:'',createdOn:'',status:'',Brand:''},
   // {id:'1',title:'',from:'',createdOn:'',status:'',Brand:''},
-]
+];
+const data = [
+  { label: 'business 1', value: '1' },
+  { label: 'business 2', value: '2' },
+];
 
 function Category() {
 //   const [modalVisible, setModalVisible] = useState(false);
@@ -42,6 +47,9 @@ function Category() {
         <CustomHeader title="Requests" home={false} backArrow={true} onBack={() => router.back()}/>
         <ScrollView className='bg-[#efefef] h-screen'>
           <View className='flex w-full'>
+              <View className=' px-4 pt-4 flex w-full'>
+                <DropdownComponent data={data} dropStyle='bg-white rounded-md'/>
+              </View>
               <View className='px-4 py-3 flex flex-row w-full flex-wrap'>
                 {/* <Text>{filter}</Text> */}
                 <TouchableOpacity className='mr-2' onPress={()=>filterData('All')}>

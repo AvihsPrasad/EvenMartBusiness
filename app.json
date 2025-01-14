@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "EventMart-1.0",
-    "slug": "EventMart-1.0",
+    "name": "EventMartBusiness-1.0",
+    "slug": "EventMartBusiness-1.0",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
