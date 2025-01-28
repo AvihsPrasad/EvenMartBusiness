@@ -17,7 +17,7 @@ const ListCard = (DataList: any) => {
         </View>
         <View className='p-4'>
             <View className='flex flex-row border-0 border-white'>
-                <Text className='grow font-RobotoBold text-lg text-ellipsis overflow-hidden w-10/12'>{DataList?.DataList?.Name}</Text>
+                <Text className='grow font-bold text-lg text-ellipsis overflow-hidden w-10/12'>{DataList?.DataList?.title}</Text>
                 <View className='bg-green-600 px-3 py-1 rounded-[4px] flex flex-row items-center h-8 mr-4'>
                     <Text className='text-white font-RobotoMedium text-sm mr-2'>{DataList?.DataList?.Rating}</Text>
                     <AntDesign name="star" size={18} color="#fff" />

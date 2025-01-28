@@ -36,9 +36,11 @@ const CustomHeader = ({
             </View>}
             {!home && title && 
             <>
-            {backArrow && <View className="flex flex-row absolute top-2 left-4 pl-2 w-[40px] h-[40px] justify-center items-center rounded-full bg-[#FFE8D6]">
-                <TouchableOpacity  onPress={() => router.back()} className="mr-2"><AntDesign name="arrowleft" size={20} color="#000" /></TouchableOpacity>
-            </View>}
+            {backArrow && <TouchableOpacity  onPress={() => router.back()} className="flex flex-row absolute top-2 left-4 pl-2 w-[40px] h-[40px] justify-center items-center rounded-full bg-[#FFE8D6]">
+                <View className="mr-2">
+                    <AntDesign name="arrowleft" size={20} color="#000" />
+                </View>
+            </TouchableOpacity>}
             <View className="grow flex flex-row justify-center items-center">
                 <Text className="text-xl font-RobotoMedium text-white tracking-widest">{title}</Text>
             </View>

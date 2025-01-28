@@ -13,6 +13,7 @@ export default function PublicLayout() {
         <Stack.Screen name="profile/notification" options={{ headerShown: false }} />
         <Stack.Screen name="chat/[chatId]" options={{ headerShown: false }} />
         <Stack.Screen name="request/[requestId]" options={{ headerShown: false }} />
+        <Stack.Screen name="details/[businessDetails]" options={{ headerShown: false }} />
       </Stack>
   );
 }

@@ -4,15 +4,20 @@ import React, { useState } from 'react';
   import AntDesign from '@expo/vector-icons/AntDesign';
 
 
-
   const DropdownComponent = ({
         data = [{ label: 'Item 1', value: '1' }],
         value='',
         dropStyle='',
+        dropdownDataChild,
         ...props
     }) => {
     // const [value, setValue] = useState(null);
     const [isFocus, setIsFocus] = useState(false);
+    const [parentData, setParentData] = useState('');
+
+    const passingData = (item: any) =>{
+      dropdownDataChild(item)
+    }
 
     // const renderLabel = () => {
     //   if (value || isFocus) {
@@ -41,11 +46,12 @@ import React, { useState } from 'react';
           valueField="value"
           placeholder={!isFocus ? 'Select item' : '...'}
           searchPlaceholder="Search..."
-          value={value}
+          value={parentData}
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
           onChange={item => {
-            // setValue(item.value);
+            passingData(item.value)
+            setParentData(item.value);
             setIsFocus(false);
           }}
           renderLeftIcon={() => (

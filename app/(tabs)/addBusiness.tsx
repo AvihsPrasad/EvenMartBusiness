@@ -5,7 +5,7 @@ import InputField from '@/components/InputField'
 import { images } from '@/constants'
 import { Entypo, FontAwesome } from '@expo/vector-icons'
 import { router } from 'expo-router'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Image, SafeAreaView, ScrollView, Text, View } from 'react-native'
 import ReactNativeModal from 'react-native-modal';
 
@@ -25,7 +25,16 @@ import ReactNativeModal from 'react-native-modal';
 
 const addBusiness = () => {
     const [showSuccessModal, setShowSuccessModal] = useState(false);
-    const [value, setValue] = useState('');
+    const [childValue, setChildValue] = useState('');
+    // const [enablePhoto, setEnablePhoto] = useState(false);
+    const dropdownData = (data?: any) =>{
+      setChildValue(data)
+    }
+    // useEffect(()=>{
+    //   if (childValue==='3'){
+    //     setEnablePhoto(true)        
+    //   }
+    // },[])
     return (
         <>
           {/* <SafeAreaView> */}
@@ -33,8 +42,8 @@ const addBusiness = () => {
             <ScrollView className=' bg-[#efefef] h-screen'>
               <View className='flex w-full pb-0'>
                 <View className='flex px-5 bg-white w-full  pt-5'>
-                    <Text className='mb-5 text-sm'>Business Type</Text>
-                    <DropdownComponent data={data} value={value}  />
+                    <Text className='mb-5 text-sm'>Business Type {childValue}</Text>
+                    <DropdownComponent data={data} value={childValue} dropdownDataChild={dropdownData} />
                 </View>
                 <View className='flex px-5 pt-5 bg-white w-full'>
                     <InputField label="Business Name" placeholder='Title' containerStyle='border-[0.5px] border-gray-600'/>

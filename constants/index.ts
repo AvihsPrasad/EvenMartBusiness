@@ -90,74 +90,108 @@ export const HomeSwiperImages = [
 ];
 export const categoryList = [
     {   CategoryId: 'CATLST001',
-        CategoryName: 'Event Hall',
+        CategoryName: 'Venue',
         categoryDisp: 'Properties for events',
         IconInfo: {type:'FontAwesome',name:'university',size:24,color:'#5E3023'},
         CategoryUrl: images.hall,
-        RedirectUrl: '/(auth)/welcome'
+        RedirectUrl: '/(auth)/welcome',
+        value: '1'
     },
     {   CategoryId: 'CATLST002',
         CategoryName: 'Props',
         categoryDisp: 'Props for decorations and photoshoot',
         IconInfo: {type:'MaterialCommunityIcons',name:'sunglasses',size:24,color:'#5E3023'},
         CategoryUrl: images.props,
-        RedirectUrl: '/(auth)/welcome'
+        RedirectUrl: '/(auth)/welcome',
+        value: '2'
     },
     {   CategoryId: 'CATLST003',
-        CategoryName: 'Photos & Videos',
+        CategoryName: 'PhotoGraphy',
         categoryDisp: 'Capture moments & memories of events',
         IconInfo: {type:'FontAwesome',name:'camera-retro',size:24,color:'#5E3023'},
         CategoryUrl: images.photo,
-        RedirectUrl: '/(auth)/welcome'
+        RedirectUrl: '/(auth)/welcome',
+        value: '3'
     },
     {   CategoryId: 'CATLST004',
         CategoryName: 'Decorations',
         categoryDisp: 'Backdrop and decoratios for lignting the stage and event',
         IconInfo: {type:'FontAwesome6',name:'award',size:24,color:'#5E3023'},
         CategoryUrl: images.decoration,
-        RedirectUrl: '/(auth)/welcome'
+        RedirectUrl: '/(auth)/welcome',
+        value: '4'
     },
     {   CategoryId: 'CATLST005',
         CategoryName: 'Music & DJ',
         categoryDisp: 'DJ night & Music for Snageeth and other events',
         IconInfo: {type:'FontAwesome',name:'music',size:24,color:'#5E3023'},
         CategoryUrl: images.music,
-        RedirectUrl: '/(auth)/welcome'
+        RedirectUrl: '/(auth)/welcome',
+        value: '5'
     },
     {   CategoryId: 'CATLST006',
         CategoryName: 'MUA',
         categoryDisp: 'cosmetic artist for make up',
         IconInfo: {type:'FontAwesome6',name:'wand-magic-sparkles',size:24,color:'#5E3023'},
         CategoryUrl: images.mua,
-        RedirectUrl: '/(auth)/welcome'
+        RedirectUrl: '/(auth)/welcome',
+        value: '6'
     },
     {   CategoryId: 'CATLST007',
-        CategoryName: 'Food & Beverages',
+        CategoryName: 'Food',
         categoryDisp: 'Catering for events',
         IconInfo: {type:'FontAwesome6',name:'burger',size:24,color:'#5E3023'},
         CategoryUrl: images.food,
-        RedirectUrl: '/(auth)/welcome'
+        RedirectUrl: '/(auth)/welcome',
+        value: '7'
     },
     {   CategoryId: 'CATLST008',
         CategoryName: 'Invitations',
         categoryDisp: 'Desiging invitations for both digital and physical cards',
         IconInfo: {type:'FontAwesome5',name:'book-open',size:24,color:'#5E3023'},
         CategoryUrl: images.invitations,
-        RedirectUrl: '/(auth)/welcome'
+        RedirectUrl: '/(auth)/welcome',
+        value: '8'
     },
     {   CategoryId: 'CATLST009',
-        CategoryName: 'Arificial Jewels',
+        CategoryName: 'Jewels',
         categoryDisp: 'Collection of jewels for make over',
         IconInfo: {type:'MaterialCommunityIcons',name:'gold',size:24,color:'#5E3023'},
         CategoryUrl: images.jewelry,
-        RedirectUrl: '/(auth)/welcome'
+        RedirectUrl: '/(auth)/welcome',
+        value: '9'
     },
     {   CategoryId: 'CATLST010',
         CategoryName: 'Vehical Convoie',
         categoryDisp: 'Bride & grooms escort & convoie for arrival and departure',
         IconInfo: {type:'FontAwesome5',name:'car',size:24,color:'#5E3023'},
         CategoryUrl: images.car,
-        RedirectUrl: '/(auth)/welcome'
+        RedirectUrl: '/(auth)/welcome',
+        value: '10'
+    },
+    {   CategoryId: 'CATLST011',
+        CategoryName: 'Gifts',
+        categoryDisp: 'Bride & grooms escort & convoie for arrival and departure',
+        IconInfo: {type:'FontAwesome5',name:'car',size:24,color:'#5E3023'},
+        CategoryUrl: images.car,
+        RedirectUrl: '/(auth)/welcome',
+        value: '11'
+    },
+    {   CategoryId: 'CATLST012',
+        CategoryName: 'Pandits',
+        categoryDisp: 'Bride & grooms escort & convoie for arrival and departure',
+        IconInfo: {type:'FontAwesome5',name:'car',size:24,color:'#5E3023'},
+        CategoryUrl: images.car,
+        RedirectUrl: '/(auth)/welcome',
+        value: '12'
+    },
+    {   CategoryId: 'CATLST013',
+        CategoryName: 'Outfits',
+        categoryDisp: 'Bride & grooms escort & convoie for arrival and departure',
+        IconInfo: {type:'FontAwesome5',name:'car',size:24,color:'#5E3023'},
+        CategoryUrl: images.car,
+        RedirectUrl: '/(auth)/welcome',
+        value: '12'
     },
 ]
 
@@ -364,4 +398,23 @@ export const Banquets = [
 ]
 export const Comments = [
     {},
+]
+
+// Business constants
+export const Business = [
+    {Id: 'BUS0001',title: "Machaniclicks",type:'3',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: 'All function photograpy, videos, editing, Model Photoshoot and Done here.'},
+    {Id: 'BUS0002',title: "Alum Bhavan",type:'1',city:'Bellary',state: 'Karnataka',country: 'India',Address:'ATP Outer ring road, near gugrati, Bellary',Rating: '3.5',location: '',Descp: 'Hotel and rooms with Luxury stay, also has conference rooms, Halls for small and big functions, with huge parking area'},
+    {Id: 'BUS0003',title: "Kamma Bhavan",type:'2',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+    {Id: 'BUS0004',title: "Nakshatra",type:'3',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+    {Id: 'BUS0005',title: "Guru A/C function hall",type:'4',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+    {Id: 'BUS0006',title: "Sunil Decorations",type:'5',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+]
+
+export const PhotoPakages = [
+    {Id: 'PP0001',title: 'Traditional Photos',price:'15,000',Descp: 'Traditional Photography with solo shoot and editing'},
+    {Id: 'PP0002',title: 'Traditional Photos & Video',price:'20,000',Descp: 'Traditional Photography with video with solo shoot and editing'},
+    {Id: 'PP0003',title: 'Wedding Photoshoot',price:'15,000',Descp: 'Wedding Photography with solo shoot and editing'},
+    {Id: 'PP0004',title: 'Wedding Photos & Video',price:'15,000',Descp: 'Wedding Photography with solo shoot and editing'},
+    {Id: 'PP0005',title: 'Wedding Coverage',price:'2,50,000',Descp: 'We cover from Begining till end of wedding which includes Photoshoots along with editing of photo and videos with Album.'},
+    {Id: 'PP0006',title: 'Album',price:'10,000',Descp: 'Per 100 photos'},
 ]
