@@ -191,7 +191,15 @@ export const categoryList = [
         IconInfo: {type:'FontAwesome5',name:'car',size:24,color:'#5E3023'},
         CategoryUrl: images.car,
         RedirectUrl: '/(auth)/welcome',
-        value: '12'
+        value: '13'
+    },,
+    {   CategoryId: 'CATLST014',
+        CategoryName: 'Destination',
+        categoryDisp: 'Bride & grooms escort & convoie for arrival and departure',
+        IconInfo: {type:'FontAwesome5',name:'car',size:24,color:'#5E3023'},
+        CategoryUrl: images.car,
+        RedirectUrl: '/(auth)/welcome',
+        value: '14'
     },
 ]
 
@@ -399,15 +407,35 @@ export const Banquets = [
 export const Comments = [
     {},
 ]
-
+export const Catdata = [
+    { label: 'Venues', value: '1' },
+    { label: 'Props', value: '2' },
+    { label: 'Photos & Videos', value: '3' },
+    { label: 'Decorations', value: '4' },
+    { label: 'Music & DJ', value: '5' },
+    { label: 'MUA', value: '6' },
+    { label: 'Food & Beverages', value: '7' },
+    { label: 'Invitations', value: '8' },
+    { label: 'Arificial Jewels', value: '9' },
+    { label: 'Vehical Convoie', value: '10' },
+    { label: 'Destination', value: '11' },
+  ];
 // Business constants
 export const Business = [
-    {Id: 'BUS0001',title: "Machaniclicks",type:'3',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: 'All function photograpy, videos, editing, Model Photoshoot and Done here.'},
     {Id: 'BUS0002',title: "Alum Bhavan",type:'1',city:'Bellary',state: 'Karnataka',country: 'India',Address:'ATP Outer ring road, near gugrati, Bellary',Rating: '3.5',location: '',Descp: 'Hotel and rooms with Luxury stay, also has conference rooms, Halls for small and big functions, with huge parking area'},
-    {Id: 'BUS0003',title: "Kamma Bhavan",type:'2',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
-    {Id: 'BUS0004',title: "Nakshatra",type:'3',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
-    {Id: 'BUS0005',title: "Guru A/C function hall",type:'4',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
-    {Id: 'BUS0006',title: "Sunil Decorations",type:'5',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+    {Id: 'BUS0003',title: "RC Props Studio",type:'2',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: 'Get all kinda of props for Photoshoot from children to Adults'},
+    {Id: 'BUS0001',title: "Machaniclicks",type:'3',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: 'All function photograpy, videos, editing, Model Photoshoot and Done here.'},
+    {Id: 'BUS0005',title: "Highlander Decorations",type:'4',city:'Bellary',state: 'Karnataka',country: 'India',Address:'Opp to HP petol bunk, Havambhavi, Bellary',Rating: '1.5',location: '',Descp: 'Decorations, shamyana, utentils for all events.'},
+    {Id: 'BUS0006',title: "Coldplay Sounds",type:'5',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+    {Id: 'BUS0004',title: "Tony&Guy",type:'6',city:'Bellary',state: 'Karnataka',country: 'India',Address:'SP Circle, Bellary.',Rating: '1.5',location: '',Descp: 'Top trained members for Beauty and hair stylist both for men and women'},
+    {Id: 'BUS0006',title: "Hali Maney",type:'7',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+    {Id: 'BUS0006',title: "Greeting Arts",type:'8',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+    {Id: 'BUS0006',title: "SLV",type:'9',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+    {Id: 'BUS0006',title: "Ola Cars",type:'10',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+    {Id: 'BUS0006',title: "Compass Gifts and collections",type:'11',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+    {Id: 'BUS0006',title: "Narasimha Swaami",type:'12',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+    {Id: 'BUS0006',title: "Chellur Silks",type:'13',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
+    {Id: 'BUS0006',title: "Sweety Destination Weddings",type:'14',city:'Bellary',state: 'Karnataka',country: 'India',Address:'qwerty sud husjdh satbgfdygsa h',Rating: '1.5',location: '',Descp: ''},
 ]
 
 export const PhotoPakages = [
@@ -418,3 +446,26 @@ export const PhotoPakages = [
     {Id: 'PP0005',title: 'Wedding Coverage',price:'2,50,000',Descp: 'We cover from Begining till end of wedding which includes Photoshoots along with editing of photo and videos with Album.'},
     {Id: 'PP0006',title: 'Album',price:'10,000',Descp: 'Per 100 photos'},
 ]
+const BusinessSchemaData = [
+    {
+        Id: 'BUS0002',
+        title: "Alum Bhavan",
+        type:'1',
+        city:'Bellary',
+        state: 'Karnataka',
+        country: 'India',
+        Rating: '3.5',
+        location: '',
+        UserId:'SHIVA01'
+    },
+] 
+const VenueSchemaData = [
+    {
+        Id: 'HALL0001',
+        BusId: 'BUS0002',
+        title: "Alum Bhavan",
+        type:'1',
+        Address:'ATP Outer ring road, near gugrati, Bellary',
+        Descp: 'Hotel and rooms with Luxury stay, also has conference rooms, Halls for small and big functions, with huge parking area'
+    },
+] 

@@ -4,9 +4,12 @@ import CustomHeader from '@/components/Header';
 import Amenities from '@/components/ui/Amenities';
 import HallSlide from '@/components/ui/HallSlide';
 import Rating from '@/components/ui/rating';
+import Decor from '@/components/views/Decor';
 import GalleryView from '@/components/views/Gallery';
 import Hall from '@/components/views/Hall';
+import Mua from '@/components/views/mua';
 import PhotoView from '@/components/views/Photo';
+import Props from '@/components/views/props';
 import { Business, images, PhotoPakages, southPlate } from '@/constants';
 import { AntDesign, Entypo, FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -60,8 +63,11 @@ const BusinessDetails = () => {
                 </TouchableOpacity>
               </View>
         </View>}
-        {tab&&<View>{businessType.type === '3' && <PhotoView businessType={businessType}/>}</View>}
         {tab&&<View>{businessType.type === '1' && <Hall businessType={businessType}/>}</View>}
+        {tab&&<View>{businessType.type === '2' && <Props businessType={businessType}/>}</View>}
+        {tab&&<View>{businessType.type === '3' && <PhotoView businessType={businessType}/>}</View>}
+        {tab&&<View>{businessType.type === '4' && <Decor businessType={businessType}/>}</View>}
+        {tab&&<View>{businessType.type === '6' && <Mua businessType={businessType}/>}</View>}
         {!tab&&<View>{<GalleryView />}</View>}
         <Text>{JSON.stringify(businessType)}</Text>
       </ScrollView>

@@ -3,14 +3,14 @@ import React, { useState } from 'react';
   import { Dropdown } from 'react-native-element-dropdown';
   import AntDesign from '@expo/vector-icons/AntDesign';
 
-
+  type DropdownProps = { data: any, value?: any, dropStyle?: any,dropdownDataChild?: any};
   const DropdownComponent = ({
         data = [{ label: 'Item 1', value: '1' }],
         value='',
         dropStyle='',
         dropdownDataChild,
         ...props
-    }) => {
+    }: DropdownProps) => {
     // const [value, setValue] = useState(null);
     const [isFocus, setIsFocus] = useState(false);
     const [parentData, setParentData] = useState('');

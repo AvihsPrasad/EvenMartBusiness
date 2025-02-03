@@ -1,10 +1,19 @@
 import { AntDesign, MaterialIcons } from '@expo/vector-icons'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import CustomButton from './CustomButton'
 import { router } from 'expo-router'
+import { categoryList } from '@/constants'
 
 const ListCard = (DataList: any) => {
+    const [catType,setCatType] = useState('')
+    useEffect(()=>{
+        categoryList.map((data) => {
+            if(DataList?.DataList?.type == data?.value){
+                setCatType(data?.CategoryName || '')
+            }
+        })
+    },[])
   return (
     <View className='bg-white rounded-lg'>
         <View className='flex absolute top-3 right-3 z-10'>
@@ -13,7 +22,7 @@ const ListCard = (DataList: any) => {
             </View>
         </View>
         <View className='w-full h-[180px] bg-slate-500 justify-center items-center rounded-t-lg rounded-tr-lg'>
-            <Text>Property Image </Text>
+            <Text className='text-gray-300'>{catType}</Text>
         </View>
         <View className='p-4'>
             <View className='flex flex-row border-0 border-white'>

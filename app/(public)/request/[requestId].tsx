@@ -27,10 +27,12 @@ const RequestId = () => {
                         <Text className="grow text-lg text-right">{250*390}</Text>
                     </View>
                 </View>
-                <Text className="text-xl font-bold">Advance amount:</Text>
-                <View className="flex flex-row">
-                    <Text className="text-lg">Advance amount:</Text>
-                    <Text className="grow text-lg text-right">20,000</Text>
+                <View>
+                  <Text className="text-xl font-bold">Advance amount:</Text>
+                  <View className="flex flex-row">
+                      <Text className="text-lg">Advance amount:</Text>
+                      <Text className="grow text-lg text-right">20,000</Text>
+                  </View>
                 </View>
                 <Text className="mt-5 text-base">Note: Decoration and extra usage of plates, price will updated at the end during full and final settelment.</Text>
             </View>
@@ -38,8 +40,8 @@ const RequestId = () => {
       </ScrollView>
       <View className='flex flex-row absolute z-10 mt-2 py-3 bottom-0 left-0 w-full bg-[#FFE8D6]'>
           <View className='flex-row gap-3 px-5 w-full'>
-            <CustomButton title={"Reject"} classname="w-[48%] bg-red-700" IconLeft={() => (<View className='mr-5'><Entypo name="check" size={24} color="white" /></View>)}/>
-            <CustomButton title={"Accept"} classname="w-[48%] bg-blue-600" IconLeft={() => (<View className='mr-5'><Entypo name="cross" size={24} color="white" /></View>)}/>
+            <CustomButton title={"Reject"} classname="w-[48%] bg-red-700" IconLeft={() => (<View className='mr-5'><Entypo name="cross" size={24} color="white" /></View>)}/>
+            <CustomButton title={"Accept"} classname="w-[48%] bg-blue-600" IconLeft={() => (<View className='mr-5'><Entypo name="check" size={24} color="white" /></View>)}/>
           </View>
         </View>
     </>
