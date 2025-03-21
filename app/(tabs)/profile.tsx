@@ -1,12 +1,21 @@
 import CustomButton from '@/components/CustomButton'
 import CustomHeader from '@/components/Header'
 import { MenuList } from '@/constants'
+import { useUser } from '@clerk/clerk-expo'
+import { useAuth } from '@clerk/clerk-react'
 import { Entypo, Feather } from '@expo/vector-icons'
-import { router } from 'expo-router'
+import { Href, router } from 'expo-router'
 import React from 'react'
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
 
 function Profile() {
+  const { user } = useUser();
+  const { signOut } = useAuth();
+
+  const handleSignOut = () => {
+    signOut();
+    router.replace("/(auth)/login");
+  };
   return (
     <>
         <CustomHeader
@@ -52,7 +61,7 @@ function Profile() {
                 ))
             }
             <View className="flex px-5 py-4">
-              <CustomButton title='Logout' bgVariant='secondary' textVariant='secondary' classname='mt-6' onPress={() => router.push('/(auth)/login')}/>
+              <CustomButton title='Logout' bgVariant='secondary' textVariant='secondary' classname='mt-6' onPress={handleSignOut}/>
             </View>
             <View style={{flexDirection:'row',padding:10,marginBottom:80,justifyContent: 'center'}}>
                 <Text>Version 1.1.0</Text>

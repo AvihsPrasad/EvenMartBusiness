@@ -9,9 +9,12 @@ import 'react-native-reanimated';
 // import { useColorScheme } from '@/hooks/useColorScheme';
 import { Platform, SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
 import React from 'react';
+import { ClerkLoaded, ClerkProvider } from "@clerk/clerk-expo";
+import tokenCache from '@/app/cache'
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
+const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
 export default function RootLayout() {
   // const colorScheme = useColorScheme();
@@ -38,7 +41,8 @@ export default function RootLayout() {
   );
 
   return (
-    <>
+    <><ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
+      <ClerkLoaded>
       { Platform.OS !== 'ios' && <StatusBar barStyle="light-content" backgroundColor={'#5E3023'}/>}
       { Platform.OS === 'ios' && <MyStatusBar backgroundColor="#5E3023" barStyle="light-content" />}
       <Stack>
@@ -48,6 +52,8 @@ export default function RootLayout() {
         <Stack.Screen name="+not-found" />
       </Stack>
       {/* <StatusBar style="auto" /> */}
+      </ClerkLoaded>
+      </ClerkProvider>
     </>
   );
 }

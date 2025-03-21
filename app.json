@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "EventMartBusiness-1.0",
-    "slug": "EventMartBusiness-1.0",
+    "name": "EventMartBusiness",
+    "slug": "EventMartBusiness",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,19 +9,15 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "jsEngine": "hermes",
-    "splash": {
-      "image": "./assets/images/google.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/google.png",
-        "backgroundColor": "#5E3023"
-      }
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.agustya.EventMartBusiness"
     },
     "web": {
       "bundler": "metro",
@@ -29,11 +25,16 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router",
+      [
+        "expo-router",
+      {
+        "origin": "https://eventmart.com/"
+      }
+      ],
       [
         "expo-splash-screen",
         {
-          "image": "",
+          "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
@@ -42,6 +43,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f0e7cc77-e899-4c40-aa5d-706ae0dc5677"
+      }
     }
   }
 }

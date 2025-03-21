@@ -5,34 +5,25 @@ if (!process.env.NEON_DB_URL) {
 }
 const sql = neon(`${process.env.NEON_DB_URL}`);
 
-// export const getDBVersion = async() => {
-//     console.log(process.env.NEON_DB_URL)
-//     // const sql = neon(process.env.NEON_DATABASE_URL);
-//     const response = await sql`SELECT version()`;
-//     return { version: response[0].version }
-// }
-
-// export const getCategories = async() => {
-//     const response = await sql`SELECT * from category`;
-//     return new Response(JSON.stringify({ data: response }), {
-//         status: 201,
-//       });
-// }
-
 export async function POST(request: Request) {
     // debugger;
     try {
       const sql = neon(`${process.env.NEON_DB_URL}`);
-      const { dbtesttext} = await request.json();
+      const { clerkId,firstname,lastname,email } = await request.json();
   
-      if (!dbtesttext) {
+      if (!clerkId || !firstname|| !lastname) {
         return Response.json(
           { error: "Missing required fields" },
           { status: 400 },
         );
       }
   
-      const response = await sql`INSERT INTO dummytable (dbtesttext) VALUES (${dbtesttext});`;
+      const response = await sql`INSERT INTO users (clerkId,email,firstname,lastname) VALUES (
+        ${clerkId}, 
+          ${email},
+          ${firstname}
+          ${lastname}
+      );`;
   
       return new Response(JSON.stringify({ data: response }), {
         status: 201,

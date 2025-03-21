@@ -1,15 +1,26 @@
 import CustomButton from '@/components/CustomButton';
 import CustomHeader from '@/components/Header';
+import InputField from '@/components/InputField';
 import { HomeCat } from '@/components/ui/HomeCat';
 import OfferSlide from '@/components/ui/offerSlide';
+import { fetchAPI } from '@/lib/fetch';
 import { Feather, FontAwesome, Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, StyleSheet, Platform, View, Text, ScrollView, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 export default function HomeScreen() {
+  const [text, setText] = useState('266@shiva');
+  const dbUpdate = async () => {
+    await fetchAPI("/(api)/cat", {
+      method: "POST",
+      body: JSON.stringify({
+        dbtesttext: text,
+      }),
+    });
+  }
   return (<>
     {/* <StatusBar barStyle="light-content" backgroundColor={'#5E3023'}/> */}
     {/* <SafeAreaView> */}
@@ -26,6 +37,15 @@ export default function HomeScreen() {
           <View className='flex flex-row w-full mb-5'>
             <View className='grow'><Text className='text-base text-gray-500'>PROFILE COMPLETEION</Text></View>
             <View><Text className='text-base text-gray-500 '>86%</Text></View>
+          </View>
+          <View>
+          <InputField
+            label="Email"
+            onChangeText={setText} value={text}
+            // value={form.email}
+            // onChangeText={(value) => setForm({ ...form, email: value })}
+          />
+      <CustomButton title="update db" onPress={dbUpdate}/>
           </View>
           <View className='flex'>
             <Text className='text-xl font-semibold mb-2'>Business 1</Text>
