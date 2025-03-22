@@ -29,7 +29,7 @@ function Register() {
     const [form, setForm] = useState({
         Email: "shivaprasadfab6@gmail.com",
         fName: "Shivaprasad",
-        lName: "KS",
+        lName: "ks",
         // brandName: "Agustya Convention Hall",
         // city: "Bellary",
         // states: "Karnataka",
@@ -37,19 +37,19 @@ function Register() {
         // cc: "+91",
         // phone: "9591499101",
         // Category: "1",
-        Password: "qwerty@123",
+        Password: "k1ng@1994",
     });
 
     const { isLoaded, signUp, setActive } = useSignUp()
     const router = useRouter();
-    const dbUpdate = async (clerkId: any, firstname: any, lastname: any, Email: string) => {
+    const dbUpdate = async (clerkId: any, firstname: any, lastname: any, email: string) => {
         await fetchAPI("/(api)/user", {
           method: "POST",
           body: JSON.stringify({
             clerkId,
             firstname,
-            lastname ,
-            Email,
+            lastname,
+            email,
           }),
         });
       }
@@ -58,16 +58,16 @@ function Register() {
     // const [password, setPassword] = React.useState('')
     const [pendingVerification, setPendingVerification] = useState(false)
     const [code, setCode] = useState('')
-    const { data: drivers, loading, error } = useFetch<any[]>("/(api)/getcat");
-    console.log(drivers);
+    // console.log(drivers);
     const onSignUpPress = async () => {
         setLoadingSpinner(true);
         if (!isLoaded) return
 
         // Start sign-up process using email and password provided
+        let fullname = form.fName
         try {
             await signUp.create({
-                username: form.fName,
+                username: fullname,
                 emailAddress: form.Email,
                 password: form.Password,
             })
@@ -102,7 +102,7 @@ function Register() {
             // and redirect the user
             if (signUpAttempt.status === 'complete') {
                 await setActive({ session: signUpAttempt.createdSessionId })
-                dbUpdate(signUpAttempt.createdUserId,form.fName,form.lName,form.Email);
+                await dbUpdate(signUpAttempt.createdUserId,form.fName,form.lName,form.Email);
                 setLoadingSpinner(false);
                 router.replace('/')
             } else {
@@ -180,7 +180,7 @@ function Register() {
                             textContentType="telephoneNumber"
                             containerStyle="bg-gray-200"
                             value={form.Password}
-                            onChangeText={(value) => setForm({ ...form, Email: value })}
+                            onChangeText={(value) => setForm({ ...form, Password: value })}
                         />
                     </View>
                     {/* <View className='flex mb-2 w-full'>

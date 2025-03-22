@@ -10,6 +10,7 @@ export async function POST(request: Request) {
     try {
       const sql = neon(`${process.env.NEON_DB_URL}`);
       const { clerkId,firstname,lastname,email } = await request.json();
+      console.log(email,firstname,lastname,clerkId)
   
       if (!clerkId || !firstname|| !lastname) {
         return Response.json(
@@ -18,11 +19,11 @@ export async function POST(request: Request) {
         );
       }
   
-      const response = await sql`INSERT INTO users (clerkId,email,firstname,lastname) VALUES (
-        ${clerkId}, 
-          ${email},
-          ${firstname}
-          ${lastname}
+      const response = await sql`INSERT INTO users (email,firstname,lastname,clerk_id) VALUES (
+        ${email},
+        ${firstname},
+        ${lastname},
+        ${clerkId}
       );`;
   
       return new Response(JSON.stringify({ data: response }), {

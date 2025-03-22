@@ -14,10 +14,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export default function HomeScreen() {
   const [text, setText] = useState('266@shiva');
   const dbUpdate = async () => {
-    await fetchAPI("/(api)/cat", {
+    await fetchAPI("/(api)/user", {
       method: "POST",
       body: JSON.stringify({
-        dbtesttext: text,
+        clerkId: 'clerkid',
+        firstname: 'first name',
+        lastname: 'last name',
+        email: 'asa@cas.com',
       }),
     });
   }

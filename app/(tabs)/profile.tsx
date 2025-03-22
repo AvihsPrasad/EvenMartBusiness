@@ -5,19 +5,27 @@ import { useUser } from '@clerk/clerk-expo'
 import { useAuth } from '@clerk/clerk-react'
 import { Entypo, Feather } from '@expo/vector-icons'
 import { Href, router } from 'expo-router'
-import React from 'react'
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
+import Spinner from 'react-native-loading-spinner-overlay'
 
 function Profile() {
   const { user } = useUser();
   const { signOut } = useAuth();
+  const [loadingSpinner, setLoadingSpinner] = useState(false);
 
-  const handleSignOut = () => {
-    signOut();
+  const handleSignOut = async() => {
+    setLoadingSpinner(true);
+    await signOut();
+    setLoadingSpinner(false);
     router.replace("/(auth)/login");
   };
+  useEffect(() => {
+    // console.log(JSON.stringify(user?.username));
+  });
+
   return (
-    <>
+    <><Spinner visible={loadingSpinner} />
         <CustomHeader
           title="Profile"
           backArrow={true}
@@ -27,15 +35,15 @@ function Profile() {
           <View className="mb-5">
             <View className="flex flex-row items-center px-5 py-4">
               <View className="w-20 h-20 bg-black justify-center items-center rounded-full">
-              {/* { user?.imageUrl && <Image source={{uri: user?.externalAccounts[0]?.imageUrl ?? user?.imageUrl,}}
+              { user?.imageUrl && <Image source={{uri: user?.externalAccounts[0]?.imageUrl ?? user?.imageUrl,}}
                      style={{ width: 80, height: 80, borderRadius: 110 / 2 }} 
                      className=" rounded-full h-[110px] w-[110px] border-[3px] border-white shadow-sm shadow-neutral-300"
-                     />} */}
+                     />}
                 {/* {! user?.imageUrl && <Text className="font-RobotoMedium text-3xl color-[#ffffff] " style={{ letterSpacing: 1.2 }}>SH</Text>} */}
-                <Text className="font-RobotoMedium text-3xl color-[#ffffff] " style={{ letterSpacing: 1.2 }}>SH</Text>
+                { !user?.imageUrl &&<Text className="font-RobotoMedium text-3xl color-[#ffffff] " style={{ letterSpacing: 1.2 }}>SH</Text>}
               </View>
               <View className="grow">
-                <Text className="text-xl font-RobotoBold m-0 pl-2"> Shivaprasad KS</Text>
+                <Text className="text-xl font-RobotoBold m-0 pl-2 capitalize"> {user?.username} KS</Text>
                 <Text className="text-sm font-Roboto pl-2 m-0 text-gray-500">shivaprasad266@gmail.com</Text>
               </View>
               <View className="p-3 ml-5">

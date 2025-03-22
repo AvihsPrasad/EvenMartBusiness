@@ -2,13 +2,16 @@ import CustomButton from '@/components/CustomButton';
 import CustomHeader from '@/components/Header';
 import ListCard from '@/components/ListCard';
 import { Business } from '@/constants';
+import { useFetch } from '@/lib/fetch';
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { StyleSheet, Image, Platform, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 
 
 export default function TabTwoScreen() {
-  const [tab,setTab] = useState(true)
+  // const [tab,setTab] = useState(true);
+  const { data: businesDb, loading, error } = useFetch<any[]>("/(api)/getbusiness");
+  console.log(businesDb)
   return (    
     <View>
         <CustomHeader title={"Business"} home={false} backArrow={true} add={true} onBack={() => router.back()} onAddBusiness={() => router.push("/(tabs)/addBusiness")}/>
@@ -16,7 +19,7 @@ export default function TabTwoScreen() {
         <View className='p-4 h-full'>
             <ScrollView>
               <View className='flex mb-28'>
-                {Business && Business.map((item,index) =>(
+                {businesDb && businesDb.map((item,index) =>(
                   <TouchableOpacity key={index} className='mb-2' onPress={() => router.push({pathname:'/(public)/details/[businessDetails]',params:{businessDetails: item.Id}})}>
                     <ListCard DataList={item} />
                   </TouchableOpacity>))
