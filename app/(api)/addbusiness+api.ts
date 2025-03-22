@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     try {
       const sql = neon(`${process.env.NEON_DB_URL}`);
       const {Email,brandName,city,state,country,address,phone,location,description,businessImage,Category,clerk_id} = await request.json();
-      console.log(Email,brandName,city,state,country,address,phone,location,description,businessImage,Category,clerk_id)
+      // console.log(Email,brandName,city,state,country,address,phone,location,description,businessImage,Category,clerk_id)
       if (!Email||!brandName||!city || !state || !country || !address || !phone || !location || !description || !businessImage || !Category ||!clerk_id) {
         return Response.json(
           { error: "Missing required fields" },

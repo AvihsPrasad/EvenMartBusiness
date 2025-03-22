@@ -9,12 +9,12 @@ import { useFetch } from '@/lib/fetch'
 const ListCard = (DataList: any) => {
     const [catType,setCatType] = useState('');
     const { data: categoriesDb, loading, error } = useFetch<any[]>("/(api)/getcat");
-    console.log(categoriesDb)
-    // let changeDropData = categoriesDb?.map((item?) => {
-    //     if (DataList?.DataList?.cat_id == categoriesDb?.id) {
-    //         setCatType()
-    //     }
-    //   })
+    // console.log(categoriesDb)
+    let changeDropData = categoriesDb?.map((item?) => {
+        if (DataList?.DataList?.cat_id == item?.id) {
+            return item?.title;
+        }
+      })
     useEffect(()=>{
         // categoryList.map((data) => {
         //     if(DataList?.DataList?.type == data?.value){
@@ -29,9 +29,9 @@ const ListCard = (DataList: any) => {
                 <TouchableOpacity  onPress={() => router.back()} className="justify-center items-center"><MaterialIcons name="delete" size={20} color="black" /></TouchableOpacity>
             </View>
         </View>
-        <View className='w-full h-[180px] bg-slate-500 justify-center items-center rounded-t-lg rounded-tr-lg'>
-            <Text className='text-gray-300'>{catType}</Text>
-        </View>
+        {/* <View className='w-full h-[180px] bg-slate-500 justify-center items-center rounded-t-lg rounded-tr-lg'>
+            <Text className='text-gray-300'>{changeDropData}</Text>
+        </View> */}
         <View className='p-4'>
             <View className='flex flex-row border-0 border-white'>
                 <Text className='grow font-bold text-lg text-ellipsis overflow-hidden w-10/12'>{DataList?.DataList?.brandname}</Text>

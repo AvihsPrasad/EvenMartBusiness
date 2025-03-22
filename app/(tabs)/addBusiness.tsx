@@ -8,7 +8,7 @@ import { useUser } from '@clerk/clerk-expo'
 import { Entypo, FontAwesome } from '@expo/vector-icons'
 import { router } from 'expo-router'
 import React, { useEffect, useState } from 'react'
-import { Image, SafeAreaView, ScrollView, Text, View } from 'react-native'
+import { ActivityIndicator, Image, SafeAreaView, ScrollView, Text, View } from 'react-native'
 import Spinner from 'react-native-loading-spinner-overlay'
 import ReactNativeModal from 'react-native-modal';
 
@@ -68,8 +68,9 @@ const addBusiness = () => {
   return (
     <>
       {/* <SafeAreaView> */}
-      <Spinner visible={loading} />
+      {/* <Spinner visible={loading} /> */}
       <CustomHeader title="Add Business" home={false} backArrow={true} onBack={() => router.back()} />
+        {loading &&<View className='h-full justify-center items-center'><ActivityIndicator size="large" color="#5E3023" /></View>}
       <ScrollView className=' bg-[#efefef] h-screen'>
         <View className='flex w-full pb-0'>
           <View className='flex px-5 bg-white w-full  pt-5'>

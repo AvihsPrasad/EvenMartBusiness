@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     try {
       const sql = neon(`${process.env.NEON_DB_URL}`);
       const { clerkId,firstname,lastname,email } = await request.json();
-      console.log(email,firstname,lastname,clerkId)
+      // console.log(email,firstname,lastname,clerkId)
   
       if (!clerkId || !firstname|| !lastname) {
         return Response.json(

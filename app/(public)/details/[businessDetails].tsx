@@ -43,15 +43,15 @@ const BusinessDetails = () => {
     const [businessType, setBusinessType] = useState({Id: '',title: "",type:'',city:'',state: '',country: '',Address:'',Rating: '',location: '',Descp: ''},)
     useEffect(() => {
       // LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
-      let type = Business.filter((item) =>  item.Id == businessDetails);
-      // console.log(type)
-      setBusinessType(type[0])
-      // Alert.alert(JSON.stringify(businessDetails));
+      // let type = Business.filter((item) =>  item.Id == businessDetails);
+      console.log(businessDetails)
+      // setBusinessType(type[0])
+      Alert.alert(JSON.stringify(businessDetails));
       // Alert.alert(JSON.stringify(type));
   }, [])
   return (
     <>
-    <CustomHeader title={businessType.title} home={false} backArrow={true} onBack={() => router.back()}/>
+    <CustomHeader title={'businessType.title'} home={false} backArrow={true} onBack={() => router.back()}/>
       <ScrollView className='bg-white h-full'>
       {<View>
           <View className='mb-5 flex flex-row bg-[#efefef]'>

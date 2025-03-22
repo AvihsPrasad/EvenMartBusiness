@@ -9,11 +9,11 @@ const SplashScreen = () => {
     // if (!isLoaded) {
     //     return <Text>Loading...</Text>
     // }
-   console.log('========================================')
-   console.log(isSignedIn)
-   console.log(sessionId)
-   console.log(getToken())
-   console.log('========================================')
+//    console.log('========================================')
+//    console.log(isSignedIn)
+//    console.log(sessionId)
+//    console.log(getToken())
+//    console.log('========================================')
     useEffect(() => {
         setTimeout(() => {
             if (isSignedIn) {
